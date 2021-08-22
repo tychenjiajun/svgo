@@ -4,6 +4,7 @@
 exports['preset-default'] = require('./preset-default.js');
 
 // builtin plugins
+exports['remove-xlink-ns'] = require('./remove-xlink-ns.js');
 exports.addAttributesToSVGElement = require('./addAttributesToSVGElement.js');
 exports.addClassesToSVGElement = require('./addClassesToSVGElement.js');
 exports.cleanupAttrs = require('./cleanupAttrs.js');
