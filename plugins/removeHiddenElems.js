@@ -10,8 +10,6 @@ const { collectStylesheet, computeStyle } = require('../lib/style.js');
 const { parsePathData } = require('../lib/path.js');
 
 exports.name = 'removeHiddenElems';
-exports.type = 'visitor';
-exports.active = true;
 exports.description =
   'removes hidden elements (zero sized, with absent attributes)';
 
@@ -30,23 +28,7 @@ exports.description =
  *
  * @author Kir Belevich
  *
- * @type {import('../lib/types').Plugin<{
- *   isHidden: boolean,
- *   displayNone: boolean,
- *   opacity0: boolean,
- *   circleR0: boolean,
- *   ellipseRX0: boolean,
- *   ellipseRY0: boolean,
- *   rectWidth0: boolean,
- *   rectHeight0: boolean,
- *   patternWidth0: boolean,
- *   patternHeight0: boolean,
- *   imageWidth0: boolean,
- *   imageHeight0: boolean,
- *   pathEmptyD: boolean,
- *   polylineEmptyPoints: boolean,
- *   polygonEmptyPoints: boolean,
- * }>}
+ * @type {import('./plugins-types').Plugin<'removeHiddenElems'>}
  */
 exports.fn = (root, params) => {
   const {

@@ -1,8 +1,6 @@
 'use strict';
 
-exports.type = 'visitor';
 exports.name = 'removeXMLNS';
-exports.active = false;
 exports.description =
   'removes xmlns attribute (for inline svg, disabled by default)';
 
@@ -16,7 +14,7 @@ exports.description =
  *
  * @author Ricardo Tomasi
  *
- * @type {import('../lib/types').Plugin<void>}
+ * @type {import('./plugins-types').Plugin<'removeXMLNS'>}
  */
 exports.fn = () => {
   return {

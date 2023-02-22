@@ -9,7 +9,6 @@ Basic plugin looks like this
 
 ```js
 export const myPlugin = {
-  type: 'visitor',
   name: 'pluginName',
   fn: () => {
     // do nothing
@@ -33,7 +32,6 @@ Visitor pattern allows to access all nodes in direct order from the root to the 
 
 ```js
 const myPlugin = {
-  type: 'visitor',
   name: 'pluginName',
   fn: () => {
     return {
@@ -74,7 +72,6 @@ All nodes except root also have an access to parentNode
 
 ```js
 const myPlugin = {
-  type: 'visitor',
   name: 'pluginName',
   fn: () => {
     return {
@@ -97,7 +94,6 @@ To remove node from parent create new array with children
 
 ```js
 const myPlugin = {
-  type: 'visitor',
   name: 'pluginName',
   fn: () => {
     return {
@@ -115,13 +111,12 @@ Find all circles with specific attribute
 
 ```js
 const myPlugin = {
-  type: 'visitor',
   name: 'pluginName',
   fn: () => {
     return {
       element: {
         enter: (node, parentNode) => {
-          if (node.name === 'circle && node.attributes.fill != null) {
+          if (node.name === 'circle' && node.attributes.fill != null) {
             node.attributes.fill = 'modify in any way'
           }
         }
@@ -135,7 +130,6 @@ Collect all elements and analyze later
 
 ```js
 const myPlugin = {
-  type: 'visitor',
   name: 'pluginName',
   fn: () => {
     const elements = []
